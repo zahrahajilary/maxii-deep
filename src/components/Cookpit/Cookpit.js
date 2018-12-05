@@ -1,5 +1,8 @@
 import React from 'react'
 import '../../Container/App.css'
+import Aux from '../../hoc/Aux'
+
+
 import Radium,{StyleRoot} from 'radium'
 
 const cockpit = (props)=> {
@@ -26,10 +29,12 @@ const cockpit = (props)=> {
         }
       }
     return(
-        <div className="App">
+        <Aux>
+        <div className="App"> 
             <p className ='button'>This is a React App</p>
             <button onClick={props.clicked} style={style}>clickme</button>
         </div>
+        </Aux>
      
     )
 }

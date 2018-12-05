@@ -1,22 +1,25 @@
-import React from 'react'
+import React,{Component} from 'react'
 import Radium from 'radium'
+import withClass from '../../../hoc/WithClass'
+import Aux from '../../../hoc/Aux'
 
-const person  = (props) => {
-    
-    const style = {
-        '@media(min-width:500px1)' :{
-            width: '400px'
+class Person extends Component{
+   
+    render (){
+        const style= {
+            backgroundColor:'#eee'
         }
-    }
         return (
-            <div style={style}>
-                <p onClick={props.click}>my name is {props.name},and im {props.age} years old</p>
-                <p>{props.childern}</p>
-                <input type="text" onChange={props.changed} value = {props.name}/>
-            </div>
-            
 
-        )
-    
+            <Aux>
+                <p onClick={this.props.click}>my name is {this.props.name},and im {this.props.age} years old</p>
+                <p>{this.props.childern}</p>
+                <input type="text" onChange={this.props.changed} value = {this.props.name}/>
+            </Aux>
+        ) 
+    }
 }
-export default Radium(person)
+
+
+
+export default withClass(Radium(Person))
